@@ -1,0 +1,40 @@
+.content {
+    margin: 12px auto;
+    max-width: 1000px;
+    padding: 0 12px;
+}
+
+.examples {
+    display: grid;
+    grid-gap: 8px;
+    grid-template-columns: 1fr;
+    margin: 0;
+    padding-inline-start: 0;
+}
+
+@media screen and (min-width: 480px) {
+    .examples {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media screen and (min-width: 736px) {
+    .examples {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+.examples li {
+    clip-path: circle(49% at center);
+    list-style: none;
+    overflow: hidden;
+}
+
+.examples img {
+    width: 100%;
+    transition: transform .3s ease-in-out;
+}
+
+.examples img:hover {
+    transform: scale(1.05);
+}
