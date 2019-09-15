@@ -8,15 +8,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
     <link rel="stylesheet" href="css/normalize.css" />
     <link rel="stylesheet" href="css/glightbox.css" />
+    <link rel="stylesheet" href="css/tiny-slider.css" />
     <link rel="stylesheet" href="css/style.css" />
     <script src="js/glightbox.min.js"></script>
 </head>
 
 <body>
     <header>
+        <img src="images/Anna.png" alt="Anna">
+        <img src="images/ONeill.png" alt="O'Neill">
+        <img src="images/Art.png" alt="Art">
     </header>
 
     <div class="content">
+        <img src="images/avatar.png" alt="avatar" height="200">
+
+        <div class="slider">
+            <img src="images/srpage4-5.jpg">
+            <img src="images/srpage6-7.jpg">
+            <img src="images/srpage8-9.jpg">
+            <img src="images/srpage10-11.jpg">
+            <img src="images/srpage12-13.jpg">
+            <img src="images/srpage14-15.jpg">
+            <img src="images/srpage16-17.jpg">
+            <img src="images/srpage18-19.jpg">
+            <img src="images/srpage20-21.jpg">
+            <img src="images/srpage22-23.jpg">
+            <img src="images/srpage24-25.jpg">
+            <img src="images/srpage26-27.jpg">
+            <img src="images/srpage28-29.jpg">
+        </div>
+
         <ul class="examples">
             <li>
                 <a href="images/IMG_0806.JPG" class="glightbox">
@@ -39,9 +61,33 @@
     <footer>
     </footer>
 
+    <script src="js/tiny-slider.js"></script>
     <script>
         const lightbox = GLightbox();
+        const slider = tns({
+            items: 1,
+            slideBy: 1,
+            autoplay: true,
+            gutter: 8,
+            responsive: {
+                480: {
+                    items: 2
+                },
+                736: {
+                    items: 3
+                }
+            },
+            autoplayText: [
+                "▶",
+                "❚❚"
+            ],
+            controls: false,
+            navPosition: "bottom",
+            autoplayPosition: "bottom"
+        });
     </script>
+
+
 </body>
 
 </html>
