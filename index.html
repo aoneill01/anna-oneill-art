@@ -67,7 +67,6 @@
         const slider = tns({
             items: 1,
             slideBy: 1,
-            autoplay: true,
             gutter: 8,
             responsive: {
                 480: {
@@ -77,13 +76,24 @@
                     items: 3
                 }
             },
-            autoplayText: [
-                "▶",
-                "❚❚"
-            ],
             controls: false,
-            navPosition: "bottom",
-            autoplayPosition: "bottom"
+            navPosition: "bottom"
+        });
+
+        let last = { x: 0, y: 0 };
+        window.addEventListener("mousemove", e => {
+            if ((last.x - e.pageX)**2 + (last.y - e.pageY)**2 < 1000) return;
+            let rotation = Math.atan2(last.y - e.pageY, last.x - e.pageX);
+            last.x = e.pageX;
+            last.y = e.pageY;
+            let dash = document.createElement("div");
+            dash.classList.add("dash");
+            dash.style.top = `${e.pageY}px`;
+            dash.style.left = `${e.pageX-5}px`;
+            dash.style.transform = `rotate(${rotation}rad)`;
+            document.body.appendChild(dash);
+            setTimeout(() => dash.classList.add("fade"), 10);
+            setTimeout(() => document.body.removeChild(dash), 1100);
         });
     </script>
 
