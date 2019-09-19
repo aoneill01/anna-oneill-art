@@ -61,7 +61,10 @@
     <footer>
     </footer>
 
+    <div id="bee"></div>
+
     <script src="js/tiny-slider.js"></script>
+    <script src="js/bee.js"></script>
     <script>
         const lightbox = GLightbox();
         const slider = tns({
@@ -79,24 +82,7 @@
             controls: false,
             navPosition: "bottom"
         });
-
-        let last = { x: 0, y: 0 };
-        window.addEventListener("mousemove", e => {
-            if ((last.x - e.pageX)**2 + (last.y - e.pageY)**2 < 1000) return;
-            let rotation = Math.atan2(last.y - e.pageY, last.x - e.pageX);
-            last.x = e.pageX;
-            last.y = e.pageY;
-            let dash = document.createElement("div");
-            dash.classList.add("dash");
-            dash.style.top = `${e.pageY}px`;
-            dash.style.left = `${e.pageX-5}px`;
-            dash.style.transform = `rotate(${rotation}rad)`;
-            document.body.appendChild(dash);
-            setTimeout(() => dash.classList.add("fade"), 10);
-            setTimeout(() => document.body.removeChild(dash), 1100);
-        });
     </script>
-
 
 </body>
 
