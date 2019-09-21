@@ -1,5 +1,7 @@
 html {
   background-color: #f8aa3a;
+  font-size: x-large;
+  font-family: sans-serif;
 }
 
 header {
@@ -123,7 +125,7 @@ header, footer, .content {
   width: 10px;
   height: 3px;
   background-color: black;
-  transition: opacity 2s ease-out;
+  transition: opacity 5s ease-out;
   transform-origin: center center;
 }
 
@@ -133,9 +135,24 @@ header, footer, .content {
 
 #bee {
   position: absolute;
-  width: 10px;
-  height: 10px;
-  background-color: red;
-  border-radius: 50%;
+  width: 60px;
+  height: 60px;
   z-index: 5;
+  transform-origin: center center;
+}
+
+#g140-2, #g134-0 {
+  display: none;
+}
+
+.alt #g140-2, .alt #g134-0 {
+  display: block;
+}
+
+#g140, #g134 {
+  display: block;
+}
+
+.alt #g140, .alt #g134 {
+  display: none;
 }
