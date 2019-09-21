@@ -27,6 +27,15 @@ header, footer, .content {
   padding-inline-start: 0;
 }
 
+img {
+  max-width: 100%;
+}
+
+#welcome {
+  display: block;
+  margin: 0 auto;
+}
+
 @media screen and (min-width: 480px) {
   html {
     padding: 0 40px;
@@ -48,7 +57,7 @@ header, footer, .content {
 }
 
 .examples li {
-  /* clip-path: circle(49% at center); */
+  align-self: center;
   list-style: none;
   overflow: hidden;
 }
