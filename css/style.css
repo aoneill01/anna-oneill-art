@@ -12,16 +12,20 @@ header img {
   zoom: 30%;
 }
 
-header, footer, .content {
+header, .content {
   background-color: white;
   margin: 0 auto;
   max-width: 1000px;
-  padding: 0 12px;
+  padding: 0 30px;
+}
+
+.content {
+  padding-bottom: 30px;
 }
 
 .examples {
   display: grid;
-  grid-gap: 40px;
+  grid-gap: 30px;
   grid-template-columns: 1fr;
   margin: 0;
   padding-inline-start: 0;
@@ -33,7 +37,7 @@ img {
 
 #welcome {
   display: block;
-  margin: 0 auto;
+  margin: 0 auto 20px auto;
 }
 
 @media screen and (min-width: 480px) {
