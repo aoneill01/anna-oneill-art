@@ -1,20 +1,22 @@
 <!doctype html>
-<html>
+<html lang="en">
 
 <head>
    <meta charset="utf-8" />
    <title>Anna O'Neill Art</title>
 
-   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0" />
+   <meta name="Description" content="Homepage for Anna O'Neill">
+
    <link rel="stylesheet" href="css/normalize.css" />
    <link rel="stylesheet" href="css/glightbox.css" />
    <link rel="stylesheet" href="css/tiny-slider.css" />
    <link rel="stylesheet" href="css/style.css" />
-   <script src="js/glightbox.min.js"></script>
 </head>
 
 <body>
    <header>
+      <h1 style="display: none;">Anna O'Neill Art</h1>
       <img src="images/Anna.png" alt="Anna">
       <img src="images/ONeill.png" alt="O'Neill">
       <img src="images/Art.png" alt="Art">
@@ -24,60 +26,60 @@
       <img src="images/welcome.png" alt="Hello, my name is Anna" width="500" id="welcome">
 
       <div class="slider">
-         <img src="images/srpage4-5.jpg">
-         <img src="images/srpage6-7.jpg">
-         <img src="images/srpage8-9.jpg">
-         <img src="images/srpage10-11.jpg">
-         <img src="images/srpage12-13.jpg">
-         <img src="images/srpage14-15.jpg">
-         <img src="images/srpage16-17.jpg">
-         <img src="images/srpage18-19.jpg">
-         <img src="images/srpage20-21.jpg">
-         <img src="images/srpage22-23.jpg">
-         <img src="images/srpage24-25.jpg">
-         <img src="images/srpage26-27.jpg">
-         <img src="images/srpage28-29.jpg">
+         <img src="images/rocks/srpage4-5.jpg" alt="Pages 4-5">
+         <img src="images/rocks/srpage6-7.jpg" alt="Pages 6-7">
+         <img src="images/rocks/srpage8-9.jpg" alt="Pages 8-9">
+         <img src="images/rocks/srpage10-11.jpg" alt="Pages 10-11">
+         <img src="images/rocks/srpage12-13.jpg" alt="Pages 12-13">
+         <img src="images/rocks/srpage14-15.jpg" alt="Pages 14-15">
+         <img src="images/rocks/srpage16-17.jpg" alt="Pages 16-17">
+         <img src="images/rocks/srpage18-19.jpg" alt="Pages 18-19">
+         <img src="images/rocks/srpage20-21.jpg" alt="Pages 20-21">
+         <img src="images/rocks/srpage22-23.jpg" alt="Pages 22-23">
+         <img src="images/rocks/srpage24-25.jpg" alt="Pages 24-25">
+         <img src="images/rocks/srpage26-27.jpg" alt="Pages 26-27">
+         <img src="images/rocks/srpage28-29.jpg" alt="Pages 28-29">
       </div>
 
       <ul class="examples">
          <li>
-            <a href="images/samples/bees-whole-picture.png" class="glightbox">
-               <img src="images/samples/bees-whole-picture.png">
+            <a href="images/samples/bees-whole-picture.png" class="glightbox" aria-label="View full image">
+               <img src="images/samples/bees-whole-picture.png" alt="Bees!">
             </a>
          </li>
          <li>
-            <a href="images/samples/cupcake.svg" class="glightbox">
-               <img src="images/samples/cupcake.svg">
+            <a href="images/samples/cupcake.svg" class="glightbox" aria-label="View full image">
+               <img src="images/samples/cupcake.svg" alt="Cupcake">
             </a>
          </li>
          <li>
-            <a href="images/samples/bees-whole-picture.svg" class="glightbox">
-               <img src="images/samples/bees-whole-picture.svg">
+            <a href="images/samples/bees-whole-picture.svg" class="glightbox" aria-label="View full image">
+               <img src="images/samples/bees-whole-picture.svg" alt="Flowers">
             </a>
          </li>
          <li>
-            <a href="images/samples/watermelon.svg" class="glightbox">
-               <img src="images/samples/watermelon.svg">
+            <a href="images/samples/watermelon.svg" class="glightbox" aria-label="View full image">
+               <img src="images/samples/watermelon.svg" alt="Watermelons">
             </a>
          </li>
          <li>
-            <a href="images/samples/southwesternbaby.png" class="glightbox">
-               <img src="images/samples/southwesternbaby.png">
+            <a href="images/samples/southwesternbaby.png" class="glightbox" aria-label="View full image">
+               <img src="images/samples/southwesternbaby.png" alt="Cactus">
             </a>
          </li>
          <li>
-            <a href="images/samples/hotdog.svg" class="glightbox">
-               <img src="images/samples/hotdog.svg">
+            <a href="images/samples/hotdog.svg" class="glightbox" aria-label="View full image">
+               <img src="images/samples/hotdog.svg" alt="Hotdog">
             </a>
          </li>
          <li>
-            <a href="images/IMG_0806.JPG" class="glightbox">
-               <img src="images/IMG_0806_SM.JPG">
+            <a href="images/IMG_0806.JPG" class="glightbox" aria-label="View full image">
+               <img src="images/IMG_0806_SM.JPG" alt="Sheep">
             </a>
          </li>
          <li>
-            <a href="images/IMG_0811.JPG" class="glightbox">
-               <img src="images/IMG_0811_SM.JPG">
+            <a href="images/IMG_0811.JPG" class="glightbox" aria-label="View full image">
+               <img src="images/IMG_0811_SM.JPG" alt="Dog">
             </a>
          </li>
       </ul>
@@ -184,8 +186,9 @@
       </g>
    </svg>
 
+   <script src="js/glightbox.min.js"></script>
    <script src="js/tiny-slider.js"></script>
-   <!-- <script src="js/bee.js"></script> -->
+   <script src="js/bee.js"></script>
    <script>
       const lightbox = GLightbox();
       const slider = tns({
