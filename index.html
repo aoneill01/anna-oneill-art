@@ -23,8 +23,13 @@
    </header>
 
    <div class="content">
-      <img src="images/welcome.png" alt="Hello, my name is Anna" width="500" id="welcome">
-
+      <div class="about">
+         <img src="images/welcome.png" alt="Hello, my name is Anna" width="500" id="welcome">
+         <div class="contact">
+            <img src="images/contactme.png" alt="Contact me!" width="300">
+            <a href="mailto:annaoneillart@gmail.com">annaoneillart@gmail.com</a>
+         </div>
+      </div>
       <div class="slider">
          <img src="images/rocks/cover.jpg" alt="Cover">
          <img src="images/rocks/srpage4-5.jpg" alt="Pages 4-5">
@@ -44,7 +49,7 @@
          <img src="images/rocks/srpage32.jpg" alt="Page 32">
       </div>
 
-      <a href="school-rocks.pdf">Download PDF</a>
+      <div class="tns-controls"><a href="school-rocks.pdf" target="_blank">Download PDF</a></div>
 
       <ul class="examples">
          <li>
@@ -189,10 +194,10 @@
          nav: false,
          slideBy: 1,
          responsive: {
-            480: {
+            600: {
                items: 2
             },
-            736: {
+            900: {
                items: 3
             }
          }

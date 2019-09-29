@@ -27,7 +27,7 @@ header, .content {
   display: grid;
   grid-gap: 30px;
   grid-template-columns: 1fr;
-  margin: 0;
+  margin: 20px 0 0 0;
   padding-inline-start: 0;
 }
 
@@ -40,7 +40,22 @@ img {
   margin: 0 auto 20px auto;
 }
 
-@media screen and (min-width: 480px) {
+.about {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.contact {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact > * {
+  align-self: center;
+}
+
+@media screen and (min-width: 600px) {
   html {
     padding: 0 40px;
   }
@@ -54,9 +69,13 @@ img {
   }
 }
 
-@media screen and (min-width: 736px) {
+@media screen and (min-width: 900px) {
   .examples {
     grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .about {
+    flex-direction: row;
   }
 }
 
