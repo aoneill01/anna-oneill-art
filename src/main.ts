@@ -7,11 +7,12 @@ gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
 ScrollTrigger.create({
   trigger: "#grass",
-  endTrigger: "#b",
+  endTrigger: "#horizon",
   pin: true,
-  start: "bottom bottom",
+  start: "99% bottom",
   end: "bottom bottom",
   scrub: true,
+  pinSpacing: false,
 });
 
 ScrollSmoother.create({

@@ -1,20 +1,14 @@
-* {
-  box-sizing: border-box;
-  
-}
-
 body {
   background: linear-gradient(180deg,rgba(235, 251, 255, 1) 0%, rgba(88, 195, 196, 1) 100%);
-  margin: 0;
 }
 
-section {
-  margin: 0;
+.page-section {
   padding: 16px;
+  min-height: 110vh;
 }
 
-section {
-  min-height: 110vh;
+#underground {
+    min-height: 100vh;
 }
 
 #grass {
@@ -24,6 +18,11 @@ section {
   right: 0;
   width: 100%;
   height: 100px;
+  pointer-events: none;
+}
+
+#horizon {
+    padding-bottom: 116px;
 }
 
 #underground {
@@ -37,4 +36,19 @@ section {
   border-radius: 50%;
   position: absolute;
   z-index: -1;
+}
+
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    gap: 16px;
+}
+
+.image-container {
+    aspect-ratio: 16 / 9;
+    background-color:rgba(88, 195, 196, 1);
+}
+
+p {
+    margin-block: 16px;
 }
