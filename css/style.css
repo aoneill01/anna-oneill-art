@@ -1,15 +1,11 @@
+* {
+  box-sizing: border-box;
+}
+
 html {
   background-color: #f8aa3a;
   font-size: large;
   font-family: sans-serif;
-}
-
-header {
-  text-align: center;
-}
-
-header img {
-  zoom: 30%;
 }
 
 header, .content {
@@ -17,6 +13,22 @@ header, .content {
   margin: 0 auto;
   max-width: 1000px;
   padding: 0 30px;
+}
+
+header {
+  padding: 0;
+}
+
+h2 {
+  font-family: "Delicious Handrawn", cursive;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 36px;
+  color: #1a4d81;
+}
+
+a {
+  color: #1a4d81;
 }
 
 .content {
