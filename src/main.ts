@@ -2,6 +2,9 @@ import { gsap } from "gsap";
 
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ScrollSmoother } from "gsap/ScrollSmoother";
+import { populatePortfolio } from "./portfolio";
+
+populatePortfolio();
 
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
@@ -13,6 +16,31 @@ ScrollTrigger.create({
   end: "bottom bottom",
   scrub: true,
   pinSpacing: false,
+});
+
+const trigger = document.querySelectorAll("li");
+
+trigger.forEach((element) => {
+  const data = {
+    percent: 100,
+  };
+
+  const img = element.querySelector("img");
+
+  const setTransformOrigin = gsap.quickSetter(img, "transformOrigin");
+
+  gsap.to(data, {
+    scrollTrigger: {
+      trigger: element,
+      scrub: 1,
+      start: "top bottom",
+      end: "bottom top",
+    },
+    percent: 0,
+    onUpdate: () => {
+      setTransformOrigin(`center ${data.percent}%`);
+    },
+  });
 });
 
 ScrollSmoother.create({
