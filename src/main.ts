@@ -18,6 +18,8 @@ ScrollTrigger.create({
   pinSpacing: false,
 });
 
+const dialog = document.querySelector("dialog");
+const dialogImage = dialog?.querySelector("img");
 const trigger = document.querySelectorAll("li");
 
 trigger.forEach((element) => {
@@ -26,6 +28,10 @@ trigger.forEach((element) => {
   };
 
   const img = element.querySelector("img");
+  img?.addEventListener("click", () => {
+    dialogImage?.setAttribute("src", img.getAttribute("src")!);
+    dialog?.showModal();
+  });
 
   const setTransformOrigin = gsap.quickSetter(img, "transformOrigin");
 

@@ -2,6 +2,10 @@ body {
   background: linear-gradient(180deg,rgba(235, 251, 255, 1) 0%, rgba(88, 195, 196, 1) 100%);
 }
 
+body:has(dialog[open]) {
+    overflow: hidden;
+}
+
 .page-section {
   padding: 16px;
   min-height: 110vh;
@@ -83,9 +87,22 @@ li {
     overflow: hidden;
     scale: 1.2;
     transition: scale .2s;
+    cursor: pointer;
   }
 
   img:hover {
     scale: 1.0;
   }
+}
+
+dialog:modal {
+    margin: auto;
+    padding: 0;
+    border: none;
+    outline: none;
+
+    img {
+        max-width: 95vw;
+        max-height: 95vh;
+    }
 }
