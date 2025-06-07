@@ -220,7 +220,7 @@ export const populatePortfolio = () => {
   const content = document.getElementById("horizon")!;
 
   for (const section of portfolio) {
-    const sectionTitle = document.createElement("h2");
+    const sectionTitle = document.createElement("h3");
     sectionTitle.textContent = section.section;
     content.appendChild(sectionTitle);
 

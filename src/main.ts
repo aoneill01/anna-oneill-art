@@ -1,12 +1,13 @@
 import { gsap } from "gsap";
 
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ScrollSmoother } from "gsap/ScrollSmoother";
+import { SplitText } from "gsap/SplitText";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { populatePortfolio } from "./portfolio";
 
 populatePortfolio();
 
-gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
+gsap.registerPlugin(ScrollTrigger, ScrollSmoother, SplitText);
 
 ScrollTrigger.create({
   trigger: "#grass",
@@ -54,7 +55,58 @@ ScrollSmoother.create({
   effects: true, // looks for data-speed and data-lag attributes on elements
 });
 
-const bottom = document.getElementById("underground");
+const bottom = document.querySelector("footer");
 const copy = document.createElement("p");
 copy.textContent = `© ${new Date().getFullYear()} by Anna O'Neill`;
 bottom?.appendChild(copy);
+
+const beeTl = gsap.timeline({
+  scrollTrigger: {
+    trigger: "#horizon",
+    start: "top top",
+    toggleActions: "play none none reset",
+  },
+});
+
+beeTl
+  .add("start")
+  .to(
+    ".bee",
+    {
+      x: "150vw",
+      top: "60%",
+      duration: 5,
+      ease: "none",
+    },
+    "start"
+  )
+  .to(
+    ".bee",
+    {
+      y: "5vh",
+      yoyo: true,
+      repeat: 20,
+      ease: "sine.inOut",
+      duration: 0.3,
+    },
+    "start"
+  );
+
+for (const header of document.querySelectorAll("h2, h3")) {
+  let split = SplitText.create(header, { type: "chars" });
+
+  // now animate the characters in a staggered fashion
+  gsap.from(split.chars, {
+    delay: 0.5,
+    duration: 0.3,
+    y: 20,
+    x: "random(-50, 50)",
+    rotation: "random(-45, 45)",
+    autoAlpha: 0, // fade in from opacity: 0 and visibility: hidden
+    stagger: 0.05, // 0.05 seconds between each
+    scrollTrigger: header,
+    onComplete: () => {
+      split.revert(); // clean up the SplitText instance
+    },
+  });
+}
