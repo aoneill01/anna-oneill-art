@@ -1,14 +1,23 @@
 body {
   background: linear-gradient(180deg,rgba(235, 251, 255, 1) 0%, rgba(88, 195, 196, 1) 100%);
+
+  font-family: "Fuzzy Bubbles", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
 body:has(dialog[open]) {
+    scrollbar-gutter: stable;
     overflow: hidden;
 }
 
 .page-section {
   padding: 16px;
   min-height: 110vh;
+}
+
+#sky {
+  padding: 0;
 }
 
 #underground {
@@ -28,6 +37,8 @@ body:has(dialog[open]) {
 
 #horizon {
     padding-bottom: 116px;
+    max-width: 1300px;
+    margin: 0 auto;
 }
 
 #underground {
@@ -62,36 +73,34 @@ p {
     object-fit: contain;
     width: 90vw;
     height: 90vh;
-    margin: 0 auto;
+    margin: 5vh auto;
 }
 
-ul {
-  display: flex;
-  flex-wrap: wrap;
+ul.examples {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 16px;
-  justify-content: center;
   padding: 0;
   list-style: none;
-}
 
-li {
-  min-width: 300px;
-  width: 300px;
-  height: 300px;
-  overflow: hidden;
-
-  img {
-    width: 300px;
-    height: 300px;
-    object-fit: cover;
+  li {
+    min-width: 300px;
+    aspect-ratio: 1 / 1;
     overflow: hidden;
-    scale: 1.2;
-    transition: scale .2s;
-    cursor: pointer;
-  }
 
-  img:hover {
-    scale: 1.0;
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        overflow: hidden;
+        scale: 1.2;
+        transition: scale .2s;
+        cursor: pointer;
+    }
+
+    img:hover {
+        scale: 1.0;
+    }
   }
 }
 
@@ -105,4 +114,11 @@ dialog:modal {
         max-width: 95vw;
         max-height: 95vh;
     }
+}
+
+h2 {
+    font-weight: bold;
+    font-size: 36px;
+    color: #1a4d81;
+    padding-top: 36px;
 }
