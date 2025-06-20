@@ -93,7 +93,7 @@ beeTl
   );
 
 for (const header of document.querySelectorAll("h2, h3")) {
-  let split = SplitText.create(header, { type: "chars" });
+  let split = SplitText.create(header, { type: "words chars" });
 
   // now animate the characters in a staggered fashion
   gsap.from(split.chars, {

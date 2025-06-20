@@ -1,14 +1,16 @@
 body {
-  background: linear-gradient(180deg,rgba(235, 251, 255, 1) 0%, rgba(88, 195, 196, 1) 100%);
+  background-color: rgba(88, 195, 196, 1);
 
   font-family: "Fuzzy Bubbles", sans-serif;
   font-weight: 400;
   font-style: normal;
+
+  overflow-x: hidden;
 }
 
 body:has(dialog[open]) {
-    scrollbar-gutter: stable;
-    overflow: hidden;
+  scrollbar-gutter: stable;
+  overflow: hidden;
 }
 
 .page-section {
@@ -21,57 +23,61 @@ body:has(dialog[open]) {
 }
 
 #underground {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 
-    .wrapper {
-        width: 100%;
-        max-width: 1300px;
-        margin: 0 auto;
-        padding-top: 30vh;
-        flex-grow: 1;
-        z-index: 1;
-    }
+  .wrapper {
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 30vh 16px 0 16px;
+    flex-grow: 1;
+    z-index: 1;
+  }
 
-    a, a:visited {
-        color: white;
-        text-decoration: underline;
-        font-weight: 700;
-    }
+  a,
+  a:visited {
+    color: white;
+    text-decoration: underline;
+    font-weight: 700;
+  }
 }
 
 footer {
-    text-align: center;
+  text-align: center;
 }
-    
+
 #grass {
   position: absolute;
-  left: 0;
-  right: 0;
-  width: 100%;
+  left: 50%;
+  transform: translate(-50%, 0);
   pointer-events: none;
   z-index: 2;
+  width: 100%;
+  min-width: 1000px;
 }
 
 #dirt {
-    position: absolute;
-    left: 0;
-    right: 0;
-    padding-top: 0;
-    pointer-events: none;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
+  padding-top: 0;
+  pointer-events: none;
+  width: 100%;
+  min-width: 1000px;
 }
 
 #horizon {
-    padding-bottom: 50vh;
-    max-width: 1300px;
-    margin: 0 auto;
+  padding-bottom: 50vh;
+  max-width: 1300px;
+  margin: 0 auto;
 
-    color: #1a4d81;
+  color: #1a4d81;
 
-    h2 {
-        padding-top: 36px;
-    }
+  h2 {
+    padding-top: 36px;
+  }
 }
 
 #underground {
@@ -83,36 +89,41 @@ footer {
 
 .cloud {
   width: 20vw;
+  min-width: 300px;
   position: absolute;
   z-index: -1;
   animation: action 3s infinite ease-in-out alternate;
 }
 
 @keyframes action {
-    0% { padding-bottom: -2vh; }
-    100% { padding-bottom: 2vh; }
+  0% {
+    padding-bottom: -2vh;
+  }
+  100% {
+    padding-bottom: 2vh;
+  }
 }
 
 .image-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
-    gap: 16px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  gap: 16px;
 }
 
 .image-container {
-    aspect-ratio: 16 / 9;
-    background-color:rgba(88, 195, 196, 1);
+  aspect-ratio: 16 / 9;
+  background-color: rgba(88, 195, 196, 1);
 }
 
 p {
-    margin-block: 16px;
+  margin-block: 16px;
 }
 
 #about-me {
-    object-fit: contain;
-    width: 90vw;
-    height: 90vh;
-    margin: 5vh auto 0;
+  object-fit: contain;
+  width: 90vw;
+  height: 90vh;
+  margin: 5vh auto 0;
 }
 
 ul.examples {
@@ -128,54 +139,60 @@ ul.examples {
     overflow: hidden;
 
     img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        overflow: hidden;
-        scale: 1.2;
-        transition: scale .2s;
-        cursor: pointer;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      overflow: hidden;
+      scale: 1.2;
+      transition: scale 0.2s;
+      cursor: pointer;
     }
 
     img:hover {
-        scale: 1.0;
+      scale: 1;
     }
   }
 }
 
 dialog:modal {
-    margin: auto;
-    padding: 0;
-    border: none;
-    outline: none;
+  margin: auto;
+  padding: 0;
+  border: none;
+  outline: none;
 
-    img {
-        max-width: 95vw;
-        max-height: 95vh;
-    }
+  img {
+    max-width: 95vw;
+    max-height: 95vh;
+  }
 }
 
 h1 {
-    display: none;
+  display: none;
 }
 
-h1, h2 {
-    font-weight: 700;
+h1,
+h2 {
+  font-weight: 700;
 }
 
 h2 {
-    font-size: 48px;
+  font-size: 48px;
 }
 
 .bee {
-    position: fixed;
-    left: -10vw;
-    top: 20%;
-    width: 7vw;
-    aspect-ratio: 1 / 1;
-    background-color: yellow;
-    border-radius: 50%;
-    border: 5px solid black;
-    pointer-events: none;
-    z-index: 5;
+  position: fixed;
+  left: -40vw;
+  top: 20%;
+  width: 7vw;
+  min-width: 100px;
+  aspect-ratio: 1 / 1;
+  background-color: yellow;
+  border-radius: 50%;
+  border: 5px solid black;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.spacer {
+  height: 50vh;
 }
