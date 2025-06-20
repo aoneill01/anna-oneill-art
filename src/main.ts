@@ -50,10 +50,10 @@ trigger.forEach((element) => {
   });
 });
 
-ScrollSmoother.create({
-  smooth: 1, // how long (in seconds) it takes to "catch up" to the native scroll position
-  effects: true, // looks for data-speed and data-lag attributes on elements
-});
+// ScrollSmoother.create({
+//   smooth: 1, // how long (in seconds) it takes to "catch up" to the native scroll position
+//   effects: true, // looks for data-speed and data-lag attributes on elements
+// });
 
 const bottom = document.querySelector("footer");
 const copy = document.createElement("p");
@@ -110,3 +110,13 @@ for (const header of document.querySelectorAll("h2, h3")) {
     },
   });
 }
+
+gsap.to(".cloud", {
+  scrollTrigger: {
+    trigger: "#sky",
+    start: "top top",
+    end: "+=2000",
+    scrub: 2,
+  },
+  y: 1000,
+});
